@@ -16,3 +16,8 @@ then
 else
 	echo "No. Caroline Is the best"
 fi
+
+# DB: Ha! Very creative. Note that because you use the variable "names" in the for loop,
+#     the list of names you provided at the top will be overwritten. Also, this is minor,
+#     but your test in the if statement will only return true if "Caroline" is the FIRST
+#     name provided, not the second, third, etc. (if more than one provided).
