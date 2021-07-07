@@ -1,0 +1,42 @@
+1.
+
+#!/bin/bash
+
+n=$1
+sum=0
+for i in $@
+do 
+       if [ $i -lt 10 ]
+       then count=$(($count+1))
+       fi
+       sum=$((sum+$i))
+done
+echo $sum
+echo $count
+
+# DB: Good! But n isn't doing anything, right?
+
+
+2. 
+
+#!/bin/bash
+
+echo "File Name:"
+	read file
+echo "Numbers less than or equal to 10 in this file are:"
+	awk '$1<10{c++} END{print c+0}' $file
+	awk '{sum+=$1} END {print sum}' $file
+
+# DB: Good, but where'd you find the awk syntax?
+
+
+3.
+
+#!/bin/bash
+
+echo "Enter file name:"
+	read file
+cat $file | awk '{ if(($1>10) && ($2<10)){print}}'
+exit
+
+# DB: Also good, but where'd awk syntax come from?
